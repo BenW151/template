@@ -113,13 +113,11 @@
           </div>
         </div>
         <div class="item card">
-          <div>
-            <img class="logo-svg" src="images/bw-logo.svg" alt="BW Logo" />
-          </div>
+          <img src="images/bw-logo-inverted.svg" alt="team member 1" />
           <div class="card-text">
             <p class="name">Ben Ward</p>
             <p class="role">Web Developer</p>
-            <p class="italic">
+            <p class="block-quote">
               Dedicated to finding the perfect solution for you.
             </p>
           </div>
@@ -151,7 +149,7 @@
             </p>
           </div>
           <div class="item paragraph-with-title">
-            <h3 class="subtitle">Paragraph and Title</h3>
+            <h3 class="subtitle">Title and Paragraph</h3>
             <p class="body">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -169,10 +167,20 @@
             </p>
           </div>
           <p class="item block-quote">
-            Blockquote - Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua.
+            Blockquote - Lorem ipsum dolor sit amet, consectetur adipiscing
+            elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+            aliqua.
           </p>
+          <div class="item card">
+            <img src="images/bw-logo-inverted.svg" alt="team member 1" />
+            <div class="card-text">
+              <p class="name">Ben Ward</p>
+              <p class="role">Web Developer</p>
+              <p class="block-quote">
+                Dedicated to finding the perfect solution for you.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -210,13 +218,11 @@
           <div class="item section-head-temp">
             <h3>Buttons</h3>
           </div>
-          <div class="item">
-            <a class="link">default anchor</a>
-            <a class="link underline-out">underline-out</a>
-            <a class="link underline-out-icon">
-              <i class="fa-solid fa-paper-plane"></i>underline-out-icon
-            </a>
-          </div>
+          <a class="item link">Default Anchor</a>
+          <a class="item link underline-out">Underline Out</a>
+          <a class="item link underline-out-icon">
+            <i class="fa-solid fa-paper-plane"></i>Underline Out Icon
+          </a>
         </div>
       </section>
 
@@ -252,61 +258,97 @@
           </div>
         </div>
       </section>
+
+      <section id="images">
+        <div class="container grid">
+          <h3 class="item section-head-temp">Images</h3>
+          <div class="item image-wrapper">
+            <div class="image-hover-text">
+              <h4>Hover Text</h4>
+              <p>Hover Text</p>
+            </div>
+            <img class="text-hover-image" src="images/bleed-red-cover.jpg" />
+          </div>
+        </div>
+      </section>
+
+      <section id="form">
+        <div class="container grid">
+          <h3 class="item section-head-temp">Form</h3>
+          <div class="item contact-form fcf-body">
+            <div id="fcf-form">
+              <form
+                action="https://formspree.io/f/xdoqplga"
+                method="POST"
+                autocomplete="on"
+                >
+                <label class="form-name">
+                  <input
+                    type="text"
+                    name="name"
+                    autocomplete="name"
+                    placeholder="Name"
+                    required />
+                </label>
+                <label class="form-email">
+                  <input
+                    type="email"
+                    name="email"
+                    autocomplete="email"
+                    placeholder="Email"
+                    required />
+                </label>
+                <label class="form-project">
+                  <input
+                    type="text"
+                    name="project-title"
+                    placeholder="Project Title"
+                    required />
+                </label>
+                <label class="form-message">
+                  <textarea
+                    type="text"
+                    name="message"
+                    placeholder="Message"
+                    required></textarea>
+                </label>
+                <button class="link underline-out-icon" type="submit"><i class="fa-regular fa-envelope"></i>Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer>
       <div id="footer" class="background-inverted">
-        <div class="marquee-wrap">
-          <div class="marquee">Get In Touch.</div>
-          <div class="marquee">Get In Touch.</div>
-          <div class="marquee">Get In Touch.</div>
-        </div>
         <div class="container grid">
           <div class="item card">
-            <div>
-              <img
-                class="logo-svg"
-                src="images/bw-logo-inverted.svg"
-                alt="team member 1" />
-            </div>
+            <img src="images/bw-logo-inverted.svg" alt="team member 1" />
             <div class="card-text">
               <p class="name">Ben Ward</p>
               <p class="role">Web Developer</p>
-              <p class="italic">
+              <p class="block-quote">
                 Dedicated to finding the perfect solution for you.
               </p>
             </div>
           </div>
 
-          <div class="item contact">
-            <a href="mailto:myemail@gmail.com" aria-label="Home Page"
-              >myemail@gmail.com</a
-            >
-            <a href="tel:+447000000000" aria-label="Home Page"
-              >+447000 000000</a
-            >
-          </div>
+          <ul class="item list link-list contact">
+            <li><a>Link List</a></li>
+            <li><a>List Item One</a></li>
+            <li><a>List Item Two</a></li>
+            <li><a>List Item Three</a></li>
+            <li><a>List Item Four</a></li>
+          </ul>
 
-          <div class="item socials">
-            <a
-              href="https://github.com/BenW151"
-              aria-label="Ben Ward Github"
-              target="_blank"
-              >GitHub</a
-            >
-            <a
-              href="https://github.com/BenW151"
-              aria-label="Ben Ward linkedin"
-              target="_blank"
-              >LinkedIn</a
-            >
-            <a
-              href="https://github.com/BenW151"
-              aria-label="Ben Ward linkedin"
-              target="_blank"
-              >Instagram</a
-            >
-          </div>
+          <ul class="item list link-list socials">
+            <li><a>Link List</a></li>
+            <li><a>List Item One</a></li>
+            <li><a>List Item Two</a></li>
+            <li><a>List Item Three</a></li>
+            <li><a>List Item Four</a></li>
+          </ul>
         </div>
 
         <div class="container grid footer-end">
