@@ -230,3 +230,138 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+//* Dropdown
+document.addEventListener("DOMContentLoaded", function () {
+    setupDropdownBehavior();
+    window.addEventListener("resize", debounce(setupDropdownBehavior, 250));
+  });
+  
+  function toggleDropdown(dropdownBtnId, dropdownContentId) {
+    const dropdownContent = document.getElementById(dropdownContentId);
+    const dropdownButton = document.getElementById(dropdownBtnId);
+  
+    // Toggle the visibility of the dropdown content
+    dropdownContent.classList.toggle("show");
+  
+    // Toggle the 'active' class on the dropdown button
+    dropdownButton.classList.toggle("active"); // This line ensures the 'active' class is correctly toggled
+  
+    // Close all other dropdowns except the current one
+    const allDropdownContents = document.querySelectorAll(".dropdown-content");
+    allDropdownContents.forEach((content) => {
+      if (content.id !== dropdownContentId) {
+        content.classList.remove("show");
+      }
+    });
+  
+    const allDropdownButtons = document.querySelectorAll(".dropbtn");
+    allDropdownButtons.forEach((button) => {
+      if (button.id !== dropdownBtnId) {
+        button.classList.remove("active");
+      }
+    });
+  }
+  
+  function setupDropdownBehavior() {
+    const isMobileView = window.matchMedia("(max-width: 768px)").matches;
+    const dropdowns = document.querySelectorAll(".dropdown");
+  
+    dropdowns.forEach((dropdown) => {
+      const btn = dropdown.querySelector(".dropdown-open");
+      const dropdownContentId = btn.getAttribute("data-dropdown");
+  
+      // Clean up previous event listeners
+      btn.removeEventListener("click", handleDropdownClick);
+      btn.removeEventListener("mouseenter", handleDropdownMouseEnter);
+      dropdown.removeEventListener("mouseleave", handleDropdownMouseLeave);
+  
+      if (isMobileView) {
+        btn.addEventListener("click", handleDropdownClick);
+      } else {
+        btn.addEventListener("mouseenter", handleDropdownMouseEnter);
+        dropdown.addEventListener("mouseleave", handleDropdownMouseLeave);
+      }
+    });
+  
+    // Only for mobile: Close all dropdowns when clicking outside
+    if (isMobileView) {
+      document.addEventListener("click", closeAllDropdowns, true);
+    } else {
+      document.removeEventListener("click", closeAllDropdowns, true);
+    }
+  }
+  
+  function handleDropdownClick(event) {
+    const btn = event.target;
+    const dropdownContentId = btn.getAttribute("data-dropdown");
+    toggleDropdown(btn.id, dropdownContentId);
+    event.stopPropagation(); // Prevent triggering closeAllDropdowns
+  }
+  
+  function handleDropdownMouseEnter(event) {
+    const btn = event.target;
+    const dropdownContentId = btn.getAttribute("data-dropdown");
+    toggleDropdown(btn.id, dropdownContentId);
+  }
+  
+  function handleDropdownMouseLeave(event) {
+    const dropdownContent =
+      event.currentTarget.querySelector(".dropdown-content");
+    dropdownContent.classList.remove("show");
+  }
+  
+  function closeAllDropdowns(event) {
+    if (!event.target.matches(".dropdown-open")) {
+      const dropdowns = document.querySelectorAll(".dropdown-content");
+      dropdowns.forEach((dropdown) => {
+        dropdown.classList.remove("show");
+      });
+      const dropbtns = document.querySelectorAll(".dropdown-open");
+      dropbtns.forEach((dropdown) => {
+        dropdown.classList.remove("active");
+      });
+    }
+  }
+  
+  // Debounce function to limit resize event handling
+  function debounce(func, wait, immediate) {
+    var timeout;
+    return function () {
+      var context = this,
+        args = arguments;
+      var later = function () {
+        timeout = null;
+        if (!immediate) func.apply(context, args);
+      };
+      var callNow = immediate && !timeout;
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+      if (callNow) func.apply(context, args);
+    };
+  }
+
+//* Accordion 
+document.addEventListener('DOMContentLoaded', function () {
+    const accordionTitles = document.querySelectorAll('.accordion-title');
+
+    accordionTitles.forEach(title => {
+        title.addEventListener('click', function () {
+            const parentItem = this.parentNode;
+
+            // Check if the clicked title's parent has the 'active' class
+            const isActive = parentItem.classList.contains('active');
+
+            // Remove 'active' class from all accordion items
+            accordionTitles.forEach(t => {
+                t.parentNode.classList.remove('active');
+            });
+
+            // Add 'active' class to the clicked title's parent if it was not active
+            if (!isActive) {
+                parentItem.classList.add('active');
+            }
+        });
+    });
+});
+
