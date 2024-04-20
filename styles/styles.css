@@ -62,7 +62,7 @@ body {
   font-family: var(--font-family-secondary);
   font-weight: normal;
   font-style: normal;
-  font-size: var(--font-size-S);
+  font-size: var(--font-size-XS);
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -677,6 +677,8 @@ form label:nth-child(4) {
     --font-size-M: 5vw;
     /*TODO rename font size classes*/
     --font-size-S: 4vw;
+    --font-size-XS: 3vw;
+    --font-size-XXS: 2vw;
   }
 
   html {
