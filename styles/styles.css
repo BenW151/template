@@ -29,9 +29,11 @@ body {
   --font-size-XXL: 12vw;
   --font-size-XL: 8vw;
   --font-size-L: 6vw;
-  --font-size-M: 2vw;
-  --font-size-S: 1.2vw;
-  --font-size-XS: 1vw;
+  --font-size-M: 4vw;
+  --font-size-S: 2vw;
+  --font-size-XS: 1.2vw;
+  --font-size-XXS: 1vw;
+
 }
 
 .light-mode {
@@ -105,7 +107,7 @@ p {
   font-family: var(--font-family-secondary);
   font-weight: normal;
   font-style: normal;
-  font-size: var(--font-size-S);
+  font-size: var(--font-size-XS);
 }
 
 .background-inverted {
@@ -180,6 +182,11 @@ p {
   transition: max-width 2s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
+.wordmark a::after {
+  background-color: var(--accent-primary);
+  bottom: 0;
+}
+
 .logo-hide {
   max-width: 100px;
   white-space: pre;
@@ -189,11 +196,6 @@ nav.scrolled .logo-hide {
   max-width: 0px;
   overflow: hidden;
   transition: max-width 2s cubic-bezier(0.77, 0, 0.175, 1);
-}
-
-.wordmark a::after {
-  background-color: var(--accent-primary);
-  bottom: 0;
 }
 
 /** Nav */
@@ -353,7 +355,7 @@ footer .list.contact {
 
 .paragraph-large .body {
   font-family: var(--font-family-primary);
-  font-size: var(--font-size-M);
+  font-size: var(--font-size-S);
 }
 
 .block-quote {
@@ -393,7 +395,7 @@ button {
   font-family: var(--font-family-secondary);
   color: var(--font-color-primary);
   background: none;
-  font-size: var(--font-size-S);
+  font-size: var(--font-size-XS);
   text-decoration: none;
   margin-bottom: var(--spacing-1);
   margin-right: auto;
@@ -459,7 +461,7 @@ a:hover::after, button:hover::after {
 .underline-out-icon i {
   max-width: 0;
   overflow: hidden;
-  font-size: calc(0.75 * var(--font-size-S));
+  font-size: calc(0.75 * var(--font-size-XS));
 }
 
 .underline-out-icon:hover i {
@@ -478,6 +480,7 @@ ul {
 }
 
 li {
+  font-size: var(--font-size-XS);
   position: relative;
   margin-bottom: var(--spacing-1);
 }
@@ -496,12 +499,12 @@ li {
 
 /** Accents */
 .index-counter {
-  font-size: var(--font-size-XS);
+  font-size: var(--font-size-XXS);
   opacity: 0.8;
 }
 
 .section-label {
-  font-size: var(--font-size-XS);
+  font-size: var(--font-size-XXS);
 }
 
 .progress-bar {
@@ -585,7 +588,7 @@ textarea {
   margin-bottom: var(--spacing-4);
   width: 100%;
   font-family: var(--font-family-secondary);
-  font-size: var(--font-size-S);
+  font-size: var(--font-size-XS);
 }
 
 textarea {
