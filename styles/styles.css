@@ -630,7 +630,7 @@ li {
   padding-bottom: var(--spacing-3);
 }
 
-.data {
+.data-list {
   grid-column: span 4;
 }
 
@@ -659,14 +659,14 @@ li {
 
 .data-item-title {
   font-family: var(--font-family-primary);
-  font-size: var(--font-size-S);
+  font-size: var(--font-size-XS);
   display: flex;
   align-items: center;
   margin-bottom: var(--spacing-1);
 }
 
 .data-figure {
-  font-size: var(--font-size-S);
+  font-size: var(--font-size-XS);
   margin-right: var(--spacing-2);
   margin-left: auto;
   margin-bottom: 0;
