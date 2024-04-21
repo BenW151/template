@@ -962,11 +962,15 @@ header .container {
   }
 
   .wordmark a {
-    font-size: var(--font-size-XL);
+    font-size: var(--font-size-L);
     line-height: normal;
   }
 
   /** Nav */
+
+  nav {
+    height: 6vh;
+  }
 
   .nav {
     flex-direction: column;
@@ -1071,7 +1075,7 @@ header .container {
   .burger-menu.active::after {
     opacity: 1;
     transform: translate(-50%, -50%) rotate(0deg);
-  }
+  }*/
 
   /** Header */
 
@@ -1135,35 +1139,35 @@ header .container {
   }
 
   /** Text */
-  
+
   .title {
     grid-column: span 6;
   }
-  
+
   .paragraph-with-title {
     grid-column: span 5;
   }
-  
+
   .paragraph {
     grid-column: span 5;
   }
-  
+
   .paragraph-large {
     grid-column: span 6;
   }
-  
+
   .paragraph-small {
     grid-column: span 4;
   }
-  
+
   .block-quote {
     grid-column: span 4;
   }
-  
+
   .card {
     grid-column: span 6;
   }
-  
+
   .block-quote {
     grid-column: span 5;
   }
