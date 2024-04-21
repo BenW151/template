@@ -45,9 +45,6 @@ body {
 }
 
 * {
-  transition-property: all;
-  transition-timing-function: linear;
-  transition-duration: 0.3s;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -124,13 +121,11 @@ p {
 
 /** Grid Positioning */
 
-#elements .item,
-#accents .item,
-#text-effects .item {
-  grid-column: 1 / 17;
-}
-
 /** Main formatting */
+
+section {
+  overflow: hidden;
+}
 
 .container {
   position: relative;
@@ -139,6 +134,7 @@ p {
   justify-content: center;
   margin: 0 auto;
   background-color: var(--accent-secondary);
+  z-index: 2;
 }
 
 .grid {
@@ -158,6 +154,10 @@ p {
 .item img {
   overflow: hidden;
   display: block;
+}
+
+.rellax {
+  transition: none;
 }
 
 /** Logo */
@@ -233,7 +233,6 @@ nav .contact {
 
 /** Header */
 
-.contact-hero,
 .index-hero {
   min-height: 100vh;
 }
@@ -260,6 +259,19 @@ header .item:nth-child(3) {
 }
 
 /** Footer */
+
+footer {
+  position: fixed;
+  width: 100vw;
+  bottom: 0;
+  z-index: 1;
+  /*transform: translateY(-12rem);*/
+  transition: transform linear;
+}
+
+footer .container {
+  background-color: var(--accent-primary);
+}
 
 footer .container,
 #learn-more .container {
@@ -293,25 +305,16 @@ footer .grid {
   background-color: var(--font-color-secondary);
 }
 
-footer .container {
-  background-color: var(--accent-primary);
-}
-
-footer {
-  position: relative;
-  z-index: -1;
-  transform: translateY(-12rem);
-  transition: transform linear;
-}
-
 footer .list.socials {
   grid-column: 11 / 14;
   grid-row-start: 2;
+  margin-top: auto;
 }
 
 footer .list.contact {
   grid-column: 14 /17;
   grid-row-start: 2;
+  margin-top: auto;
 }
 
 .footer-end .item:nth-child(1) {
@@ -479,6 +482,10 @@ button:hover::after {
   max-width: 2rem;
 }
 
+.dropdown {
+  grid-column: span 2;
+}
+
 .dropdown-open {
   cursor: pointer;
   display: flex;
@@ -504,7 +511,7 @@ button:hover::after {
   visibility: hidden;
   position: absolute;
   min-width: 15vw;
-  z-index: 10;
+  z-index: 999;
   left: 0;
   transform: translateY(10px);
   transition: all 0.1s;
@@ -623,7 +630,7 @@ li {
   transform: rotate(225deg);
 }
 
-.accordion-item.active .list {
+.accordion-item.active .accordion-content {
   max-height: 200px;
   opacity: 1;
   transition: all 0.4s cubic-bezier(0.77, 0, 0.175, 1);
@@ -668,11 +675,16 @@ li {
 .data-figure {
   font-size: var(--font-size-XS);
   margin-right: var(--spacing-2);
+  margin-bottom: var(--spacing-1);
   margin-left: auto;
-  margin-bottom: 0;
 }
 
 /** Accents */
+.accent {
+  white-space: nowrap;
+  grid-column: span 2;
+}
+
 .index-counter {
   font-size: var(--font-size-XXS);
   opacity: 0.8;
@@ -812,9 +824,22 @@ form label:nth-child(4) {
 }
 
 /** Images */
-#images .container {
-  background-image: url("../images/background-image.png");
-  background-size: cover;
+header .container {
+  background: none;
+}
+
+.background-image {
+  width: 100vw;
+  height: 100%;
+  position: fixed;
+  z-index: 2;
+}
+
+.background-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.8);
 }
 
 .image-text-overlay {
@@ -846,7 +871,6 @@ form label:nth-child(4) {
 
 .image-website {
   grid-column: 3 / 15;
-  filter: invert(100%);
 }
 
 .image-website img {
@@ -1076,13 +1100,11 @@ form label:nth-child(4) {
   footer .list.socials {
     grid-column: 5 / 7;
     grid-row-start: 2;
-    margin-top: auto;
   }
 
   footer .list.contact {
     grid-column: 3 / 5;
     grid-row-start: 2;
-    margin-top: auto;
   }
 
   .footer-end .item {
@@ -1107,7 +1129,35 @@ form label:nth-child(4) {
   }
 
   /** Text */
-
+  
+  .title {
+    grid-column: span 6;
+  }
+  
+  .paragraph-with-title {
+    grid-column: span 5;
+  }
+  
+  .paragraph {
+    grid-column: span 5;
+  }
+  
+  .paragraph-large {
+    grid-column: span 6;
+  }
+  
+  .paragraph-small {
+    grid-column: span 4;
+  }
+  
+  .block-quote {
+    grid-column: span 4;
+  }
+  
+  .card {
+    grid-column: span 6;
+  }
+  
   .block-quote {
     grid-column: span 5;
   }
@@ -1124,6 +1174,10 @@ form label:nth-child(4) {
     grid-column: span 3;
   }
 
+  .accordion {
+    grid-column: span 6;
+  }
+
   /** Accents */
 
   /** Forms */
@@ -1133,6 +1187,10 @@ form label:nth-child(4) {
   }
 
   /** Images */
+
+  .image-website {
+    grid-column: span 6;
+  }
 }
 
 /* Responsive design for tablet */

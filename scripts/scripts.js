@@ -113,10 +113,31 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+//* Footer Parallax Placeholder
+document.addEventListener("DOMContentLoaded", function() {
+  const placeholder = document.querySelector('.footer-placeholder')
+  const footer = document.querySelector('footer')
+
+  // On DOMContentLoaded, set placeholder height to be equal to footer height
+  updateHeight()
+
+  window.addEventListener('resize', onResize)
+
+  // On window resize, update placeholder height to be equal to footer height
+  function onResize() {
+    updateHeight()
+  }
+
+  function updateHeight() {
+    // Placeholder should always match footer height
+    placeholder.style.height = `${footer.offsetHeight}px`
+  }
+})
+
 //* Rellax
 document.addEventListener("DOMContentLoaded", function () {
   var rellax = new Rellax(".rellax", {
-    speed: -1,
+    speed: 1,
     center: false,
     wrapper: null,
     round: true,
@@ -138,32 +159,6 @@ function myFunction() {
   var scrolled = (winScroll / height) * 100;
   document.getElementById("myBar").style.width = scrolled + "%";
 }
-
-//* Parallax
-document.addEventListener("DOMContentLoaded", (event) => {
-  window.addEventListener("scroll", () => {
-    const footer = document.querySelector("footer");
-    const scrollableDistance =
-      document.documentElement.scrollHeight - window.innerHeight;
-    const footerHeight = footer.clientHeight;
-    const revealStartPoint = scrollableDistance - footerHeight;
-
-    let scrolled = window.scrollY;
-
-    if (scrolled >= revealStartPoint) {
-      let offset = scrolled - revealStartPoint;
-      let percentage = Math.min(offset / footerHeight, 1);
-      let translateY = -12 + percentage * 12;
-
-      footer.style.transform = `translateY(${translateY}rem)`;
-
-      document.body.style.paddingBottom = `${12 - translateY}rem`;
-    } else {
-      footer.style.transform = "translateY(-12rem)";
-      document.body.style.paddingBottom = "0";
-    }
-  });
-});
 
 //* light mode toggle
 document.addEventListener("DOMContentLoaded", function () {

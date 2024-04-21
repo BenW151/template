@@ -123,6 +123,9 @@
 
     <main>
       <header>
+        <div class="background-image rellax" data-rellax-speed="3">
+          <img src="images/background-image.png" />
+        </div>
         <div class="container grid hero index-hero">
           <div class="hero-text item">
             <h1 class="text-reveal">Elements</h1>
@@ -221,7 +224,7 @@
               <p class="accordion-title">
                 Accordion Title<i class="fa-solid fa-arrow-up"></i>
               </p>
-              <ul class="item list">
+              <ul class="item accordion-content list">
                 <li class="list-title">Default List</li>
                 <li>List Item One</li>
                 <li>List Item Two</li>
@@ -233,7 +236,7 @@
               <p class="accordion-title">
                 Accordion Title<i class="fa-solid fa-arrow-up"></i>
               </p>
-              <ul class="item list">
+              <ul class="item accordion-content list">
                 <li class="list-title">Default List</li>
                 <li>List Item One</li>
                 <li>List Item Two</li>
@@ -245,7 +248,7 @@
               <p class="accordion-title">
                 Accordion Title<i class="fa-solid fa-arrow-up"></i>
               </p>
-              <ul class="item list">
+              <ul class="item accordion-content list">
                 <li class="list-title">Default List</li>
                 <li>List Item One</li>
                 <li>List Item Two</li>
@@ -289,7 +292,7 @@
             ></a>
             <ul
               id="dropdown-template"
-              class="dropdown-content item list link-list contact">
+              class="dropdown-content item list link-list">
               <li><a>Link List</a></li>
               <li><a>List Item One</a></li>
               <li><a>List Item Two</a></li>
@@ -303,12 +306,8 @@
       <section id="accents">
         <div class="container grid">
           <h3 class="item section-head-temp">Accents</h3>
-          <div class="item">
-            <p class="index-counter">01</p>
-          </div>
-          <div class="item">
-            <p class="section-label">Section Label</p>
-          </div>
+          <p class="item accent index-counter">01</p>
+          <p class="item accent section-label">Section Label</p>
         </div>
       </section>
 
@@ -397,56 +396,52 @@
           </div>
         </div>
       </section>
+      <div class="footer-placeholder"></div>
     </main>
 
-    <footer>
-      <div id="footer" class="background-inverted">
-        <div class="container grid">
-          <div class="item card">
-            <img src="images/bw-logo-inverted.svg" alt="team member 1" />
-            <div class="card-text">
-              <p class="name">Ben Ward</p>
-              <p class="role">Web Developer</p>
-              <p class="block-quote">
-                Dedicated to finding the perfect solution for you.
-              </p>
-            </div>
+    <footer id="footer" class="background-inverted">
+      <div class="container grid">
+        <div class="item card">
+          <img src="images/bw-logo-inverted.svg" alt="team member 1" />
+          <div class="card-text">
+            <p class="name">Ben Ward</p>
+            <p class="role">Web Developer</p>
+            <p class="block-quote">
+              Dedicated to finding the perfect solution for you.
+            </p>
           </div>
-
-          <ul class="item list link-list contact">
-            <li><a>List Item One</a></li>
-            <li><a>List Item Two</a></li>
-          </ul>
-
-          <ul class="item list link-list socials">
-            <li><a>List Item One</a></li>
-            <li><a>List Item Two</a></li>
-            <li><a>List Item Three</a></li>
-            <li><a>List Item Four</a></li>
-          </ul>
         </div>
 
-        <div class="container grid footer-end">
-          <p class="item">Copyright ©2024</p>
-          <a
-            class="item"
-            href="https://github.com/BenW151"
-            aria-label="Home Page"
-            >Designed by Ben Ward</a
-          >
-          <a
-            class="item"
-            href="privacy-policy.html"
-            aria-label="Privacy Policy Page"
-            >Privacy Policy</a
-          >
-          <a
-            class="item"
-            href="terms-and-conditions.html"
-            aria-label="Terms and Conditions Page"
-            >Terms + Conditions</a
-          >
-        </div>
+        <ul class="item list link-list contact">
+          <li><a>List Item One</a></li>
+          <li><a>List Item Two</a></li>
+        </ul>
+
+        <ul class="item list link-list socials">
+          <li><a>List Item One</a></li>
+          <li><a>List Item Two</a></li>
+          <li><a>List Item Three</a></li>
+          <li><a>List Item Four</a></li>
+        </ul>
+      </div>
+
+      <div class="container grid footer-end">
+        <p class="item">Copyright ©2024</p>
+        <a class="item" href="https://github.com/BenW151" aria-label="Home Page"
+          >Designed by Ben Ward</a
+        >
+        <a
+          class="item"
+          href="privacy-policy.html"
+          aria-label="Privacy Policy Page"
+          >Privacy Policy</a
+        >
+        <a
+          class="item"
+          href="terms-and-conditions.html"
+          aria-label="Terms and Conditions Page"
+          >Terms + Conditions</a
+        >
       </div>
     </footer>
   </body>
