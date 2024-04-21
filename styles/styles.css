@@ -836,7 +836,7 @@ header .container {
 
 .background-image {
   width: 100vw;
-  height: 100%;
+  height: 120%;
   position: fixed;
   z-index: 2;
 }
@@ -1049,7 +1049,7 @@ header .container {
     left: 50%;
     font-family: "Font Awesome\ 5 Free";
     font-weight: 900;
-    font-size: var(--font-size-L);
+    font-size: var(--font-size-M);
     transform: translate(-50%, -50%);
     transition: transform 0.5s ease, opacity 0.5s ease;
   }
