@@ -713,6 +713,10 @@ li {
   }
 }
 
+.marquee {
+  grid-column: span 16;
+}
+
 .marquee-wrap {
   display: flex;
   white-space: nowrap;
@@ -742,7 +746,9 @@ li {
 }
 
 .text-reveal {
+  grid-column: 1 / 17;
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   margin-right: auto;
   --gap-size: 8px;
@@ -1179,6 +1185,16 @@ header .container {
   }
 
   /** Accents */
+
+  /** Text Effects */
+
+  .text-reveal {
+    grid-column: span 6;
+  }
+
+  .marquee {
+    grid-column: span 6;
+  }
 
   /** Forms */
 
