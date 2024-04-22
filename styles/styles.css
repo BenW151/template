@@ -238,8 +238,12 @@ nav .contact {
 
 /** Header */
 
+header {
+  height: 100svh;
+}
+
 .index-hero {
-  min-height: 100lvh;
+  min-height: 100%;
 }
 
 .hero-text {
@@ -778,7 +782,7 @@ li {
 
 .word {
   display: inline-block;
-  transform: translateY(100%) rotate(2deg);
+  transform: translateY(100%);
   animation: none;
   opacity: 0;
 }
@@ -927,7 +931,6 @@ form label:nth-child(4) {
   a,
   button {
     font-size: var(--font-size-XS);
-    margin-right: auto;
   }
 
   /** Grid Positioning */
