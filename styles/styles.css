@@ -173,7 +173,7 @@ section {
 .wordmark a {
   display: flex;
   font-family: var(--font-family-primary);
-  font-size: var(--font-size-M);
+  font-size: var(--font-size-S);
   margin-left: var(--spacing-3);
   margin-bottom: 0;
   overflow: hidden;
@@ -183,7 +183,7 @@ section {
 
 .wordmark a::after {
   background-color: var(--accent-primary);
-  bottom: 7px;
+  bottom: 0;
 }
 
 .logo-hide {
@@ -269,7 +269,10 @@ footer {
   width: 100vw;
   bottom: 0;
   z-index: 1;
-  transition: transform linear;
+}
+
+.footer-placeholder {
+  z-index: -10000;
 }
 
 footer .container {
@@ -595,9 +598,8 @@ li {
   font-size: var(--font-size-S);
 }
 
-.accordion-title i {
+.accordion-title svg {
   font-size: var(--font-size-XXS);
-  transform: rotate(45deg);
   margin-right: var(--spacing-2);
   margin-left: auto;
 }
@@ -635,8 +637,8 @@ li {
   height: 1px;
 }
 
-.accordion-item.active i {
-  transform: rotate(225deg);
+.accordion-item.active svg {
+  transform: rotate(180deg);
 }
 
 .accordion-item.active .accordion-content {
@@ -1069,12 +1071,12 @@ header .container {
   }
 
   .burger-menu::before {
-    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='1' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-menu'%3E%3Cline x1='4' x2='20' y1='12' y2='12'/%3E%3Cline x1='4' x2='20' y1='6' y2='6'/%3E%3Cline x1='4' x2='20' y1='18' y2='18'/%3E%3C/svg%3E");
+    content: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIxIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLW1lbnUiPjxsaW5lIHgxPSI0IiB4Mj0iMjAiIHkxPSIxMiIgeTI9IjEyIi8+PGxpbmUgeDE9IjQiIHgyPSIyMCIgeTE9IjYiIHkyPSI2Ii8+PGxpbmUgeDE9IjQiIHgyPSIyMCIgeTE9IjE4IiB5Mj0iMTgiLz48L3N2Zz4=");
     opacity: 1;
   }
 
   .burger-menu::after {
-    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='1' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-x'%3E%3Cpath d='M18 6 6 18'/%3E%3Cpath d='m6 6 12 12'/%3E%3C/svg%3E");
+    content: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIxIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLXgiPjxwYXRoIGQ9Ik0xOCA2IDYgMTgiLz48cGF0aCBkPSJtNiA2IDEyIDEyIi8+PC9zdmc+");
     opacity: 0;
     transform: translate(-50%, -50%) rotate(90deg);
   }
