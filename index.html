@@ -56,10 +56,8 @@
     <!-- JavaScript Files -->
     <script type="text/javascript" src="scripts/scripts.js"></script>
 
-    <!-- Font Awesome -->
-    <script
-      src="https://kit.fontawesome.com/83d90bf61e.js"
-      crossorigin="anonymous"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 
     <!-- AOS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
@@ -91,14 +89,28 @@
       </div>
       <div class="burger-menu"></div>
       <div class="nav">
-        <a class="nav-item text-reveal active" href="index.html" aria-label="Home Page"
+        <a
+          class="nav-item text-reveal active"
+          href="index.html"
+          aria-label="Home Page"
           >Home</a
         >
-        <a class="nav-item text-reveal" href="#about" aria-label="Home Page">About</a>
-        <a class="nav-item text-reveal" href="#skills" aria-label="Home Page">Skills</a>
-        <a class="nav-item text-reveal" href="#services" aria-label="Home Page">Services</a>
-        <a class="nav-item text-reveal" href="#projects" aria-label="Home Page">Projects</a>
-        <a class="nav-item text-reveal" href="contact.html" aria-label="Home Page"
+        <a class="nav-item text-reveal" href="#about" aria-label="Home Page"
+          >About</a
+        >
+        <a class="nav-item text-reveal" href="#skills" aria-label="Home Page"
+          >Skills</a
+        >
+        <a class="nav-item text-reveal" href="#services" aria-label="Home Page"
+          >Services</a
+        >
+        <a class="nav-item text-reveal" href="#projects" aria-label="Home Page"
+          >Projects</a
+        >
+        <a
+          class="nav-item text-reveal"
+          href="contact.html"
+          aria-label="Home Page"
           >Contact</a
         >
         <ul class="item list link-list contact">
@@ -123,9 +135,11 @@
 
     <main>
       <header>
-        <div class="background-image rellax" data-rellax-speed="3" data-rellax-mobile-speed="0"
-        >
-          <img src="images/background-image.png" />
+        <div
+          class="background-image rellax"
+          data-rellax-speed="3"
+          data-rellax-mobile-speed="0">
+          <img src="images/old-background-image.png" />
         </div>
         <div class="container grid hero index-hero">
           <div class="hero-text item">
@@ -285,7 +299,7 @@
           <a class="item link">Default Anchor</a>
           <a class="item link underline-out">Underline Out</a>
           <a class="item link underline-out-icon">
-            <i class="fa-solid fa-paper-plane"></i>Underline Out Icon
+            <i data-lucide="send"></i>Underline Out Icon
           </a>
           <div class="dropdown">
             <a class="dropdown-open item" data-dropdown="dropdown-template"
@@ -388,7 +402,8 @@
                     required></textarea>
                 </label>
                 <button class="link underline-out-icon" type="submit">
-                  <i class="fa-regular fa-envelope"></i>Submit
+                  <i data-lucide="mail"></i>
+                  Submit
                 </button>
               </form>
             </div>

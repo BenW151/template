@@ -30,7 +30,7 @@ body {
   --font-size-XL: 8vw;
   --font-size-L: 6vw;
   --font-size-M: 3vw;
-  --font-size-S: 2vw;
+  --font-size-S: 1.8vw;
   --font-size-XS: 1.2vw;
   --font-size-XXS: 1vw;
 }
@@ -207,7 +207,6 @@ nav {
   width: 100%;
   height: 8vh;
   z-index: 1000;
-  background: var(--background-primary);
 }
 
 .nav {
@@ -220,6 +219,7 @@ nav {
 }
 
 .nav-item {
+  font-size: var(--font-size-XS);
   margin: 0 var(--spacing-4);
 }
 
@@ -265,7 +265,6 @@ footer {
   width: 100vw;
   bottom: 0;
   z-index: 1;
-  /*transform: translateY(-12rem);*/
   transition: transform linear;
 }
 
@@ -471,13 +470,19 @@ button:hover::after {
   transform-origin: bottom right;
 }
 
-.underline-out-icon i {
+.lucide {
+  color: var(--font-color-primary);
+  width: var(--font-size-S);
+  height: var(--font-size-S);
+}
+
+.underline-out-icon svg {
   max-width: 0;
   overflow: hidden;
   font-size: calc(0.75 * var(--font-size-XS));
 }
 
-.underline-out-icon:hover i {
+.underline-out-icon:hover svg {
   padding-right: var(--spacing-1);
   max-width: 2rem;
 }
@@ -750,7 +755,6 @@ li {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin-right: auto;
   --gap-size: 8px;
   gap: var(--gap-size);
 }
@@ -1053,22 +1057,20 @@ header .container {
     position: absolute;
     top: 50%;
     left: 50%;
+    transform: translate(-50%, -50%);
     font-family: "Font Awesome\ 5 Free";
     font-weight: 900;
     font-size: var(--font-size-M);
-    transform: translate(-50%, -50%);
     transition: transform 0.5s ease, opacity 0.5s ease;
   }
 
   .burger-menu::before {
-    content: "\f0c9";
-    color: inherit;
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='1' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-menu'%3E%3Cline x1='4' x2='20' y1='12' y2='12'/%3E%3Cline x1='4' x2='20' y1='6' y2='6'/%3E%3Cline x1='4' x2='20' y1='18' y2='18'/%3E%3C/svg%3E");
     opacity: 1;
   }
 
   .burger-menu::after {
-    content: "\f00d";
-    color: inherit;
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='1' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-x'%3E%3Cpath d='M18 6 6 18'/%3E%3Cpath d='m6 6 12 12'/%3E%3C/svg%3E");
     opacity: 0;
     transform: translate(-50%, -50%) rotate(90deg);
   }
@@ -1081,7 +1083,8 @@ header .container {
   .burger-menu.active::after {
     opacity: 1;
     transform: translate(-50%, -50%) rotate(0deg);
-  }*/
+  }
+  */
 
   /** Header */
 
