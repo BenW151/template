@@ -256,12 +256,13 @@ header {
 
 .background-image img {
   height: 100lvh;
-  width: auto;    
-  position: fixed; 
+  width: 100%;    
   object-fit: cover;
+  object-position: 100% 0%;
   top: 0;
-  right: 0;
   bottom: 0;
+  right: 0;
+  opacity: 0.8;
   filter: brightness(0.8);
 }
 
@@ -903,7 +904,6 @@ form label:nth-child(4) {
     --font-size-XL: 12vw;
     --font-size-L: 6vw;
     --font-size-M: 5vw;
-    /*TODO rename font size classes*/
     --font-size-S: 4vw;
     --font-size-XS: 3vw;
     --font-size-XXS: 2vw;
