@@ -118,25 +118,30 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-//* Footer Parallax Placeholder
-document.addEventListener("DOMContentLoaded", function () {
-  const placeholder = document.querySelector(".footer-placeholder");
-  const footer = document.querySelector("footer");
+//* Footer Parallax
+document.addEventListener("DOMContentLoaded", (event) => {
+  window.addEventListener("scroll", () => {
+    const footer = document.querySelector("footer");
+    const scrollableDistance =
+      document.documentElement.scrollHeight - window.innerHeight;
+    const footerHeight = footer.clientHeight;
+    const revealStartPoint = scrollableDistance - footerHeight;
 
-  // On DOMContentLoaded, set placeholder height to be equal to footer height
-  updateHeight();
+    let scrolled = window.scrollY;
 
-  window.addEventListener("resize", onResize);
+    if (scrolled >= revealStartPoint) {
+      let offset = scrolled - revealStartPoint;
+      let percentage = Math.min(offset / footerHeight, 1);
+      let translateY = -12 + percentage * 12;
 
-  // On window resize, update placeholder height to be equal to footer height
-  function onResize() {
-    updateHeight();
-  }
+      footer.style.transform = `translateY(${translateY}rem)`;
 
-  function updateHeight() {
-    // Placeholder should always match footer height
-    placeholder.style.height = `${footer.offsetHeight}px`;
-  }
+      document.body.style.paddingBottom = `${12 - translateY}rem`;
+    } else {
+      footer.style.transform = "translateY(-12rem)";
+      document.body.style.paddingBottom = "0";
+    }
+  });
 });
 
 //* Rellax

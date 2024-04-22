@@ -265,27 +265,16 @@ header .item:nth-child(3) {
 /** Footer */
 
 footer {
-  position: fixed;
-  width: 100vw;
-  bottom: 0;
+  position: relative;
   z-index: 1;
-}
-
-.footer-placeholder {
-  z-index: -10000;
+  transition: none;
+  transform: translateY(-12rem);
 }
 
 footer .container {
   background-color: var(--accent-primary);
-}
-
-footer .container,
-#learn-more .container {
   padding-bottom: var(--spacing-3);
   padding-top: var(--spacing-3);
-}
-
-footer .grid {
   white-space: nowrap;
 }
 
